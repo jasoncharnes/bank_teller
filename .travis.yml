@@ -1,5 +1,16 @@
 language: ruby
+cache: bundler
+bundler_args: --without yard
+sudo: false
 rvm:
+  - 2.1
   - 2.2
-  - jruby
+  - 2.3.0
+  - ruby-head
   - rbx-2
+before_install:
+  - gem install bundler
+matrix:
+  allow_failures:
+    - rvm: ruby-head
+  fast_finish: true
