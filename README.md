@@ -1,4 +1,5 @@
 # Bank Teller
+[![Code Climate](https://codeclimate.com/repos/572c190b20916e00680030b0/badges/df6d434fec0219cc1364/gpa.svg)](https://codeclimate.com/repos/572c190b20916e00680030b0/feed)
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/bank_teller`. To experiment with that code, run `bin/console` for an interactive prompt.
 
