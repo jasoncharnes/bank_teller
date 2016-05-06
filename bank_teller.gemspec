@@ -28,5 +28,11 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.11"
   spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "minitest", "~> 5.8"
+  spec.add_development_dependency "activesupport", "~> 4.2.6"
+  spec.add_development_dependency "activerecord", "~> 4.2.6"
+  spec.add_development_dependency 'dotenv', '~> 2.1', '>= 2.1.1'
+  spec.add_development_dependency 'stripe-ruby-mock', '~> 2.2.3'
+  spec.add_development_dependency 'activerecord-nulldb-adapter', '~> 0.3.2'
   spec.add_runtime_dependency 'stripe', "~> 1.42.0"
 end

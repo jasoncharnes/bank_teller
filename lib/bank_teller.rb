@@ -2,26 +2,10 @@ require "bank_teller/version"
 require 'bank_teller/engine' if defined?(Rails)
 
 module BankTeller
-  # The current currency.
-  #
-  # @return [String]
   @@currency = 'usd'
-
-  # The current currency symbol.
-  #
-  # @return [String]
   @@currency_symbol = '$'
-
-  # The custom currency formatter.
-  #
-  # @return [Lambda]
   @@format_currency_using = nil
 
-  # Set the currency to be used when billing users.
-  #
-  # @param currency [Integer]
-  # @param symbol [String]
-  # @return [Boolean]
   def self.use_currency(currency, symbol = nil)
     @@currency = currency
     symbol = self.guess_currency_symbol(currency) if symbol.nil?
@@ -53,7 +37,7 @@ module BankTeller
     @@currency_symbol
   end
 
-  def self.formatCurrencyUsing(callback)
+  def self.format_currency_using(callback)
     @@format_currency_using = callback
   end
 

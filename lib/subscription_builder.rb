@@ -1,13 +1,19 @@
 class SubscriptionBuilder
+  attr_accessor :user, :name, :plan
+  attr_accessor :quantity, :coupon, :metadata
+  attr_accessor :trial_days, :skip_trial
+
   def initialize(user, name, plan, *args)
     @user = user
     @name = name
     @plan = plan
-    @trial_days = args[0][:trial_days] || 0
-    @quantity = args[0][:quantity] || 1
-    @skip_trial = args[0][:skip_trial] || false
-    @coupon = args[0][:coupon]
-    @metadata = args[0][:metadata]
+    if args[0]
+      set_instance_vars_for_args(args[0])
+    else
+      @trial_days = 0
+      @quantity = 1
+      @skip_trial = false
+    end
   end
 
   def add(options = {})
@@ -24,25 +30,16 @@ class SubscriptionBuilder
       trial_ends_at = trial_days ? trial_days.days.from_now.to_time.to_i : nil
     end
 
-    user.subscriptions.create do |subscription|
-      subscription.name = name
-      subscription.stripe_id = stripe_subscription.id
-      subscription.stripe_plan = plan
-      subscription.quantity = quantity
-      subscription.trial_ends_at = trial_ends_at
-    end
+    user.subscriptions.create(
+      name: name,
+      stripe_id: stripe_subscription.id,
+      stripe_plan: plan,
+      quantity: quantity,
+      trial_ends_at: trial_ends_at
+    )
   end
 
   protected
-
-  attr_accessor :user
-  attr_accessor :name
-  attr_accessor :plan
-  attr_accessor :quantity
-  attr_accessor :trial_days
-  attr_accessor :skip_trial
-  attr_accessor :coupon
-  attr_accessor :metadata
 
   def get_stripe_customer(token = nil, options = {})
     if !user.stripe_id.nil?
@@ -75,5 +72,13 @@ class SubscriptionBuilder
 
   def get_tax_percent_for_pay_load
     user.try(:tax_percentage)
+  end
+
+  def set_instance_vars_for_args(args)
+    @trial_days   = args[:trial_days] || 0
+    @quantity     = args[:quantity] || 1
+    @skip_trial   = args[:skip_trial] || false
+    @coupon       = args[:coupon]
+    @metadata     = args[:metadata]
   end
 end
