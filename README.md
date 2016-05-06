@@ -1,5 +1,5 @@
 # Bank Teller
-[![Gem Version](https://badge.fury.io/rb/bank_teller@2x.png)](https://badge.fury.io/rb/bank_teller)
+[![Gem Version](https://badge.fury.io/rb/bank_teller.svg)](https://badge.fury.io/rb/bank_teller)
 [![Build Status](https://travis-ci.org/jasoncharnes/bank_teller.svg?branch=master)](https://travis-ci.org/jasoncharnes/bank_teller)
 [![Code Climate](https://codeclimate.com/github/jasoncharnes/bank_teller/badges/gpa.svg)](https://codeclimate.com/github/jasoncharnes/bank_teller)
 
