@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "bank_teller"
   spec.version       = BankTeller::VERSION
   spec.authors       = ["Jason Charnes"]
-  spec.email         = ["jason@thecharnes.com"]
+  spec.email         = ["jason@jasoncharnes.com"]
 
   spec.summary       = %q{A subscription billing interface modeled after Laravel Cashier}
   spec.description   = %q{A subscription billing interface modeled after Laravel Cashier}

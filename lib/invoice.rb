@@ -90,15 +90,15 @@ class Invoice
   end
 
   def view(data)
-    # Needs to return a view
+    # Coming Soon
   end
 
   def pdf(data)
-    # Needs to return a PDF
+    # Coming Soon
   end
 
   def download(data)
-    # Needs to return a download
+    # Coming Soon
   end
 
   def raw_starting_balance

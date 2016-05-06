@@ -116,7 +116,7 @@ module Billable
   end
 
   def download_invoice(id, data, storage_path = nil)
-    # Add me
+    # Coming Soon
   end
 
   def invoices(include_pending = false, parameters = {})
