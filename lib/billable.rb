@@ -49,9 +49,7 @@ module Billable
   end
 
   def on_trial?(subscription = 'default', plan = nil)
-    if subscription == 'default' && plan == nil && on_generic_trial?
-      true
-    end
+    return true if plan == nil && on_generic_trial?
 
     subscription = get_subscription(subscription)
 
