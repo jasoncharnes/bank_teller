@@ -2,8 +2,6 @@ require "bank_teller/version"
 require 'bank_teller/engine' if defined?(Rails)
 
 module BankTeller
-  protected
-
   # The current currency.
   #
   # @return [String]

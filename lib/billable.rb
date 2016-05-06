@@ -53,13 +53,13 @@ module Billable
     subscription = get_subscription(subscription)
 
     if plan.nil?
-      has_subscription_on_trial?
+      has_subscription_on_trial?(subscription)
     else
-      has_subscription_on_trial? && stripe_plan === plan
+      has_subscription_on_trial?(subscription) && stripe_plan === plan
     end
   end
 
-  def has_subscription_on_trial?
+  def has_subscription_on_trial?(subscription)
     subscription && subscription.on_trial
   end
 
@@ -153,8 +153,8 @@ module Billable
     end
 
     if source
-      card_brand = source.brand
-      card_last_four = source.last4
+      self.card_brand = source.brand
+      self.card_last_four = source.last4
     end
 
     self.save

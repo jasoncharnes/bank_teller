@@ -30,7 +30,6 @@ class SubscriptionBuilder
       subscription.stripe_plan = plan
       subscription.quantity = quantity
       subscription.trial_ends_at = trial_ends_at
-      ends_at = nil
     end
   end
 

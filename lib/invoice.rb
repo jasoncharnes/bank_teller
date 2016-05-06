@@ -4,9 +4,8 @@ class Invoice
     @invoice = invoice
   end
 
-  # TODO: Support Timezone
   def date(timezone = nil)
-    invoice.to_date
+    invoice.to_time.in_time_zone(timezone).to_date
   end
 
   def total
@@ -60,11 +59,8 @@ class Invoice
   end
 
   def amount_off
-    if amount = invoice.discount.coupon.amount_off
-      format_amount(amount)
-    else
-      format_amount(0)
-    end
+    amount = invoice.discount.coupon.amount_off || 0
+    format_amount(amount)
   end
 
   def invoice_items

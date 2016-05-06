@@ -46,22 +46,12 @@ class Subscription < ActiveRecord::Base
     self
   end
 
-  def update_quantity(quantity, customer = nil)
+  def update_quantity(quantity)
     subscription = stripe_subscription
     subscription.quantity = quantity
     subscription.save
     self.quantity = quantity
     self.save
-    self
-  end
-
-  def no_prorate
-    prorate = false
-    self
-  end
-
-  def anchor_billing_cycle_on(date = 'now')
-    billing_cycle_anchor = date
     self
   end
 
@@ -73,10 +63,8 @@ class Subscription < ActiveRecord::Base
 
     if additional_options
       subscription.prorate = additional_options[:prorate] || false
-
-      if anchor = additional_options[:billing_cycle_anchor]
-        subscription.billing_cycle_anchor = anchor
-      end
+      anchor = additional_options[:billing_cycle_anchor] || nil
+      subscription.billing_cycle_anchor = anchor if anchor
     end
 
     if on_trial?
