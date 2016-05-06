@@ -8,6 +8,7 @@ Bank Teller is a Ruby on Rails interface for interacting with Stripe. It is an i
 This gem cannot be used as a stand-alone gem. It is very tightly integrated with ActiveSupport and ActiveRecord. This gem is best used in a Ruby on Rails application.
 
 ## Still to Come
+### Contribute, if you'd like!
 - Finish Tests
 - Add Webhooks
 - Invoice PDFs
