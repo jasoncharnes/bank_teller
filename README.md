@@ -3,6 +3,8 @@
 [![Build Status](https://travis-ci.org/jasoncharnes/bank_teller.svg?branch=master)](https://travis-ci.org/jasoncharnes/bank_teller)
 [![Code Climate](https://codeclimate.com/github/jasoncharnes/bank_teller/badges/gpa.svg)](https://codeclimate.com/github/jasoncharnes/bank_teller)
 
+## For an updated, Rails-specific implementation checkout [Pay](https://github.com/jasoncharnes/pay).#
+
 Bank Teller is a Ruby on Rails interface for interacting with Stripe. It is an implementation of the Laravel library, [Cashier](http://github.com/laravel/cashier). Major kudos to Taylor Otwell and all of the contributors to Cashier, it's amazing. Bank Teller has some minor API differences from Cashier, mostly to match the Ruby style. To quote the Cashier project: "It handles almost all of the boilerplate subscription billing code you are dreading writing... coupons, swapping subscription, subscription 'quantities', cancellation grace periods, and <strike>invoice PDFs</strike> (coming soon)."
 
 This gem cannot be used as a stand-alone gem. It is very tightly integrated with ActiveSupport and ActiveRecord. This gem is best used in a Ruby on Rails application.
@@ -13,6 +15,7 @@ This gem cannot be used as a stand-alone gem. It is very tightly integrated with
 - Add Webhooks
 - Invoice PDFs
 - One Off Charges
+
 
 ## Installation
 
