@@ -1,4 +1,4 @@
-# This thing is ish.#]
+# This thing is ish.
 
 ## For an updated, Rails-specific implementation checkout [Pay](https://github.com/jasoncharnes/pay).
 
